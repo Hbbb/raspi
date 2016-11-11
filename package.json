@@ -1,0 +1,14 @@
+{
+  "name": "raspi",
+  "version": "1.0.0",
+  "description": "a playground of raspberry pi scripts",
+  "repository": {
+    "url": "git@github.com:Hbbb/raspi.git",
+    "type": "git"
+  },
+  "author": "harrison",
+  "license": "MIT",
+  "dependencies": {
+    "pi-gpio": "^0.0.8"
+  }
+}
