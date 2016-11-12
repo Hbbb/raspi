@@ -1,14 +1,22 @@
-const gpio = require('pi-gpio');
+const Gpio = require('onoff').Gpio;
 
-gpio.open(16, 'output', function(err) {
-  if (err) { return console.err(err); }
+const pin = new Gpio(14, 'out');
+const input = new Gpio(16, 'in');
 
-  gpio.write(16, 1, function() {
-    gpio.read(16, function(err, val) {
-      if (err) { return console.err(err); }
+console.log('initial pin value: ', pin.readSync());
+console.log('input pin value: ', input.readSync());
 
-      console.log('GPIO#16: ', val);
-      gpio.close(16);
-    });
-  });
+pin.writeSync(1);
+console.log('pin value: ', pin.readSync());
+
+pin.writeSync(0);
+console.log('pin value: ', pin.readSync());
+
+pin.unexport();
+
+process.on('SIGINT', function() {
+  pin.unexport();
+  input.unexport();
 });
+
+

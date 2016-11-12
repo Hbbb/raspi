@@ -9,6 +9,8 @@
   "author": "harrison",
   "license": "MIT",
   "dependencies": {
-    "pi-gpio": "^0.0.8"
+    "onoff": "^1.1.1",
+    "pi-gpio": "^0.0.8",
+    "rpi-gpio": "^0.7.0"
   }
 }
